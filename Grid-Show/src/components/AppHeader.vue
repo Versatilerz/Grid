@@ -9,17 +9,17 @@
         <li><RouterLink to="/four">Four</RouterLink></li>
       </ul>
     </nav>
-    <h2 class="header__currentRoute">{{ route.name.toUpperCase() }}</h2>
+    <h2 class="header__currentRoute">{{ route.name?.toString().toUpperCase() }}</h2>
   </header>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref, onMounted, onUnmounted } from "vue";
 import { useRoute } from "vue-router";
 const route = useRoute();
 const isHovered = ref(false);
 
-const handleMouseMove = (event) => {
+const handleMouseMove = (event: { clientY: number }) => {
   const screenHeight = window.innerHeight;
   if (event.clientY < screenHeight * 0.1) {
     isHovered.value = true;
