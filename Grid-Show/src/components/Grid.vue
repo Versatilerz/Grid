@@ -52,9 +52,10 @@ const classes = computed(() => {
   max-width: 1280px;
   margin: auto;
   grid-gap: 10px;
+  grid-template-columns: repeat(3, 1fr);
   grid-template-areas:
-    "a b c"
-    "d e f";
+    "a a a"
+    "b b c";
 
   margin-bottom: 1rem;
 
